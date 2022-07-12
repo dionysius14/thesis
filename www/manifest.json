@@ -1,0 +1,11 @@
+{
+  "name": "E-Modul Reproduksi",
+  "short_name": "E-Modul Reproduksi",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

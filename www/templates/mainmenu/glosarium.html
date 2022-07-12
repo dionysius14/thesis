@@ -1,0 +1,30 @@
+<ion-view view-title="Glosarium" class="background" ng-controller="HomeCtrl">
+    <ion-content class="overlay" scroll="true">
+        <div class="head-container">
+            <img style="width: 100%;" src="img/pustaka-head.jpg"/>
+            <div class="bottom-left" style="padding-left: 20px;width: 100%;background-color: rgba(255,255,255,0.8)">
+                <h2 style="color: black;font-family: 'Dosis'"><strong>Istilah Biologi</strong></h2>
+            </div>
+        </div>
+        <div ng-include src="'slice/content_development.html'"></div>
+        <div class="row">
+            <div class="col">
+                <div data-ng-repeat="(letter, glosarium) in sorted_glosarium" class="alpha_list">
+                    <ion-item class="item item-divider" id="index_{{letter}}">
+                        {{letter}}
+                    </ion-item>
+                    <ion-item class="item-text-wrap" ng-repeat="item in glosarium">
+                        <strong>{{item.istilah}}</strong> <br/>{{item.penjelasan}}
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ul class="alpha_sidebar">
+        <div data-ng-repeat="(letter, authors) in sorted_glosarium">
+            <li ng-click="gotoList('index_{{letter}}')" ng-repeat="letter in letter">
+                {{letter}}
+            </li>
+        </div>
+    </ul>
+</ion-view>
